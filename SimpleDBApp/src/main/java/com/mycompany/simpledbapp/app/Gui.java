@@ -44,9 +44,12 @@ public class Gui {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
+<<<<<<< HEAD:SimpleDBApp/src/main/java/com/mycompany/simpledbapp/app/Gui.java
        //loginButton.addActionListener(new ActionListener() {
         //
         //});
+=======
+>>>>>>> gui-branch:SimpleDBApp/src/main/java/com/mycompany/simpledbapp/view/Gui.java
     }
 
     public static void main(String[] args) {
