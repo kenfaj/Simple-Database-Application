@@ -3,6 +3,7 @@ package com.mycompany.simpledbapp.app;
 import javax.swing.*;
 
 import com.mycompany.simpledbapp.app.components.LogoutButton;
+import com.mycompany.simpledbapp.service.LogoutButtonController;
 
 import java.awt.*;
 
@@ -14,8 +15,6 @@ public class Guest extends JPanel {
         welcomeLabel = new JLabel("Welcome Guest");
         logoutButton = new LogoutButton();
 
-        // initialize actionlistener for logoutbutton
-
     }
 
     public Guest launch() {
@@ -26,6 +25,7 @@ public class Guest extends JPanel {
         welcomeLabel.setHorizontalAlignment(JLabel.CENTER);
 
         // setup actionlistener for logoutbutton
+        logoutButton.addActionListener(new LogoutButtonController());
 
         add(welcomeLabel);
         add(logoutButton);

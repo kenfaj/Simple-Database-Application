@@ -1,6 +1,9 @@
 package com.mycompany.simpledbapp.app;
 
 import javax.swing.*;
+
+import com.mycompany.simpledbapp.service.LogoutButtonController;
+
 import java.awt.*;
 //import gridlayout
 
@@ -20,9 +23,6 @@ public class Login extends JPanel {
         userTextField = new JTextField();
         passwordField = new JPasswordField();
         loginButton = new JButton("Login");
-
-        // initialize variables for actionlistener
-
     }
 
     public Login launch() {

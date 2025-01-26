@@ -10,9 +10,7 @@ public class Admin extends JPanel {
 
     public Admin() {
         logoutButton = new LogoutButton();
-
-        // initialize actionlistener for logoutbutton
-
+        ResultSet = 
     }
 
     public Guest launch() {
