@@ -1,4 +1,4 @@
-package com.mycompany.simpledbapp;
+package com.mycompany.simpledbapp.view;
 
 import javax.swing.*;
 import javax.swing.border.Border;
