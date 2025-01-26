@@ -1,27 +1,48 @@
 package com.mycompany.simpledbapp.app;
 
 import javax.swing.*;
+
+import com.mycompany.simpledbapp.app.components.LogoutButton;
+
 import java.awt.*;
 
-public class Guest extends JFrame {
-    private JPanel panel;
+public class Guest extends JPanel {
     private JLabel welcomeLabel;
-    private JButton logoutButton;
+    private LogoutButton logoutButton;
 
     public Guest() {
-        this.setTitle("Guest");
-        this.setVisible(true);
-        this.setSize(300, 200);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
+        welcomeLabel = new JLabel("Welcome Guest");
+        logoutButton = new LogoutButton();
+
+        // initialize actionlistener for logoutbutton
 
     }
 
-    public void launch() {
+    public Guest launch() {
+        setLayout(new GridLayout(2, 1));
+        setVisible(true);
+        setSize(300, 200);
 
+        welcomeLabel.setHorizontalAlignment(JLabel.CENTER);
+
+        // setup actionlistener for logoutbutton
+
+        add(welcomeLabel);
+        add(logoutButton);
+
+        return this;
     }
 
     public static void main(String[] args) {
-        new Guest();
+        // Tester method
+        JFrame f = new JFrame();
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.add(new Guest().launch());
+        f.pack();
+        f.setVisible(true);
+    }
+
+    public LogoutButton getLogoutButton() {
+        return logoutButton;
     }
 }
