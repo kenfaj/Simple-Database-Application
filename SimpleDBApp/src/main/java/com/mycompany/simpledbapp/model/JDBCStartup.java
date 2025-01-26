@@ -9,6 +9,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -105,5 +107,23 @@ public class JDBCStartup {
         } catch (SQLException e) {
             System.err.println(e.toString());
         }
+    }
+
+    public static Object[][] getUsernameRoleArray() {
+        JDBCStartup jdbc = new JDBCStartup("AccountsDB.db");
+        ArrayList<String[]> usernameRoleArray = new ArrayList<>();
+        try {
+            ResultSet rs = jdbc.getAll();
+
+            while (rs.next()) {
+                usernameRoleArray.add(new String[] { rs.getString("username"), rs.getString("user_role") });
+            }
+        } catch (SQLException e) {
+            System.err.println(e.toString());
+            JOptionPane.showMessageDialog(null, "SQLException in JDBCStartup UsernameRoleArray");
+        }
+
+        // cast ArrayList<String[]> to object[][]
+        return usernameRoleArray.toArray(new String[0][]);
     }
 }
