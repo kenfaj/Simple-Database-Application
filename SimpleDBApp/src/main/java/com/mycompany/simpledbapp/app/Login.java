@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 //import gridlayout
 
-public class Login extends JFrame {
+public class Login extends JPanel {
 
     private JPanel panel;
     private JLabel userLabel;
@@ -14,7 +14,6 @@ public class Login extends JFrame {
     private JButton loginButton;
 
     public Login() {
-        this.setTitle("Login");
         panel = new JPanel();
         userLabel = new JLabel("Enter Username");
         passwordLabel = new JLabel("Enter Password");
@@ -22,10 +21,11 @@ public class Login extends JFrame {
         passwordField = new JPasswordField();
         loginButton = new JButton("Login");
 
-        launch();
+        // initialize variables for actionlistener
+
     }
 
-    public void launch() {
+    public Login launch() {
 
         panel.setLayout(new GridLayout(2, 2));
         panel.add(userLabel);
@@ -33,19 +33,23 @@ public class Login extends JFrame {
         panel.add(passwordLabel);
         panel.add(passwordField);
 
-        this.add(panel, BorderLayout.CENTER);
-        this.add(loginButton, BorderLayout.SOUTH);
-        this.setVisible(true);
-        this.setSize(300, 200);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
+        add(panel, BorderLayout.CENTER);
+        add(loginButton, BorderLayout.SOUTH);
+        setVisible(true);
+        setSize(300, 200);
 
         // Set up actionlistener for Login Button
+
+        return this;
     }
 
     public static void main(String[] args) {
         // Tester method
-        new Login();
+        JFrame f = new JFrame();
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.add(new Login().launch());
+        f.pack();
+        f.setVisible(true);
     }
 
 }

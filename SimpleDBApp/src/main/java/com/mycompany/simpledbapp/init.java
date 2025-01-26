@@ -5,10 +5,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class init {
+
+    // stores current logged in user
+    public static String username = null;
+
     public static void main(String[] args) {
-        //Dito tayo magiinitialize ng Application(open login frame)
-        
-        //Test output for init file
+        // Dito tayo magiinitialize ng Application(open login frame)
+
+        // Test output for init file
         JDBCStartup jdbc = new JDBCStartup("root", "root", "AccountsDB.db");
         try {
             ResultSet rs = jdbc.getAll();
@@ -18,5 +22,6 @@ public class init {
         } catch (SQLException e) {
             System.err.println(e.toString());
         }
+
     }
 }
