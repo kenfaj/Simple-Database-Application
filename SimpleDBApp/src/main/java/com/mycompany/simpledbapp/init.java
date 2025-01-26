@@ -15,20 +15,9 @@ public class init {
     public static void main(String[] args) {
         // Dito tayo magiinitialize ng Application(open login frame)
         JFrame f = new JFrame();
+        f.setTitle("Login");
         f.add(new Login().launch());
         f.pack();
         f.setVisible(true);
-
-        // Test output for init file
-        JDBCStartup jdbc = new JDBCStartup("root", "root", "AccountsDB.db");
-        try {
-            ResultSet rs = jdbc.getAll();
-            while (rs.next()) {
-                System.out.println(rs.getString("username") + rs.getString("password") + rs.getString("user_role"));
-            }
-        } catch (SQLException e) {
-            System.err.println(e.toString());
-        }
-
     }
 }
