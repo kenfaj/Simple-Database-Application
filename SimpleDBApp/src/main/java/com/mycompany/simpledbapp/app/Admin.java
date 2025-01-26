@@ -5,9 +5,6 @@ import com.mycompany.simpledbapp.model.JDBCStartup;
 import com.mycompany.simpledbapp.service.LogoutButtonController;
 
 import java.awt.*;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
 import javax.swing.*;
 
