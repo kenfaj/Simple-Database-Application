@@ -18,15 +18,14 @@ public class LogoutButtonController implements ActionListener {
         this.view = view;
     }
 
-    // Metho
-    / public void attachListener(LogoutButton logoutButto
+    // Method to attach the listener to a button
+    // public void attachListener(LogoutButton logoutButton) {
 
-    ublic void actionPerformed(ActionEvent e) {
-        /*
-       
+    // }
 
-     * model.logout();
-         * view.setNewContent(new Login().launch());
-         */
+    
+    public void actionPerformed(ActionEvent e) {
+        model.logout();
+        view.setNewContent(new Login().launch());
     }
 }
