@@ -1,4 +1,4 @@
-package com.mycompany.simpledbapp.app;
+package com.mycompany.simpledbapp.view;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,17 +25,6 @@ public class Login extends JFrame {
         launch();
     }
 
-    /************* ✨ Codeium Command ⭐ *************/
-    /**
-     * Set up and launch the Login window
-     * 
-     * Creates a panel with a GridLayout containing the user label, text field,
-     * password label and field
-     * Adds the panel to the center of the JFrame and the login button to the south
-     * Sets the size, visible, default close operation, and location of the JFrame
-     * Sets up an action listener for the login button
-     */
-    /****** 7b2d32f9-1be2-4ecf-bd50-5ef1bc562bfa *******/
     public void launch() {
 
         panel.setLayout(new GridLayout(2, 2));
