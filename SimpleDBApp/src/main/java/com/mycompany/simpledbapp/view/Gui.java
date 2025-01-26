@@ -44,9 +44,6 @@ public class Gui {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
-        loginButton.addActionListener(new ActionListener() {
-
-        });
     }
 
     public static void main(String[] args) {
