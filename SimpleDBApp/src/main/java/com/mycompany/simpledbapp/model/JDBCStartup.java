@@ -54,7 +54,7 @@ public class JDBCStartup {
     private Connection conn;
 
     public JDBCStartup(String username, String password, String database) {
-        String connStr = "jdbc:sqlite:resources/" + database;
+        String connStr = "jdbc:sqlite:SimpleDBApp/src/main/resources/" + database;
         try {
             conn = DriverManager.getConnection(connStr);
             System.out.println("Successful connection");

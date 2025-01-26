@@ -1,4 +1,4 @@
-package com.mycompany.simpledbapp.view;
+package com.mycompany.simpledbapp.app;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -44,9 +44,9 @@ public class Gui {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
-        loginButton.addActionListener(new ActionListener() {
-
-        });
+       //loginButton.addActionListener(new ActionListener() {
+        //
+        //});
     }
 
     public static void main(String[] args) {
