@@ -53,7 +53,7 @@ public class JDBCStartup {
 
     private Connection conn;
 
-    public JDBCStartup(String username, String password, String database) {
+    public JDBCStartup(String database) {
         String connStr = "jdbc:sqlite:SimpleDBApp/src/main/resources/" + database;
         try {
             conn = DriverManager.getConnection(connStr);
@@ -96,7 +96,7 @@ public class JDBCStartup {
     }
 
     public static void main(String[] args) {
-        JDBCStartup jdbc = new JDBCStartup("root", "root", "AccountsDB.db");
+        JDBCStartup jdbc = new JDBCStartup("AccountsDB.db");
         try {
             ResultSet rs = jdbc.getAll();
             while (rs.next()) {
