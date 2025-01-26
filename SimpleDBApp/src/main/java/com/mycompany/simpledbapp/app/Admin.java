@@ -1,4 +1,4 @@
-package com.mycompany.simpledbapp.view;
+package com.mycompany.simpledbapp.app;
 
 public class Admin {
     

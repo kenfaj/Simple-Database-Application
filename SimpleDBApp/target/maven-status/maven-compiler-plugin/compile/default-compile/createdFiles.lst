@@ -1,0 +1,8 @@
+com\mycompany\simpledbapp\view\Guest.class
+com\mycompany\simpledbapp\view\Gui.class
+com\mycompany\simpledbapp\model\JDBCStartup$User.class
+com\mycompany\simpledbapp\view\Admin.class
+com\mycompany\simpledbapp\init.class
+com\mycompany\simpledbapp\model\JDBCStartup.class
+com\mycompany\simpledbapp\view\Login.class
+com\mycompany\simpledbapp\view\Error.class
