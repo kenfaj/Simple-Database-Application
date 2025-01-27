@@ -20,8 +20,11 @@ public class LoginButtonController implements ActionListener {
     private JFrame frame;
     private JTextField userTextField;
     private JPasswordField passwordField;
+    
+    private JDBCStartup jdbc;
+    private ResultSet rs;
 
-    private LoginButtonController(JFrame frame, JTextField userTextField, JPasswordField passwordField) {
+    public LoginButtonController(JFrame frame, JTextField userTextField, JPasswordField passwordField) {
         this.frame = frame;
         this.userTextField = userTextField;
         this.passwordField = passwordField;
@@ -54,9 +57,6 @@ public class LoginButtonController implements ActionListener {
 
         frame.repaint();
     }
-
-    private JDBCStartup jdbc;
-    private ResultSet rs;
 
     public boolean isUser(String username, char[] password) {
         try {
