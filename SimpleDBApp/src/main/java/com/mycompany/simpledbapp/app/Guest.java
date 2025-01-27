@@ -8,10 +8,14 @@ import com.mycompany.simpledbapp.service.LogoutButtonController;
 import java.awt.*;
 
 public class Guest extends JPanel {
+    private JFrame frame;
+
     private JLabel welcomeLabel;
     private LogoutButton logoutButton;
 
-    public Guest() {
+    public Guest(JFrame frame) {
+        this.frame = frame;
+
         welcomeLabel = new JLabel("Welcome Guest");
         logoutButton = new LogoutButton();
 
@@ -25,7 +29,7 @@ public class Guest extends JPanel {
         welcomeLabel.setHorizontalAlignment(JLabel.CENTER);
 
         // setup actionlistener for logoutbutton
-        logoutButton.addActionListener(new LogoutButtonController());
+        logoutButton.addActionListener(new LogoutButtonController(frame));
 
         add(welcomeLabel);
         add(logoutButton);
@@ -37,7 +41,7 @@ public class Guest extends JPanel {
         // Tester method
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new Guest().launch());
+        f.add(new Guest(f).launch());
         f.pack();
         f.setVisible(true);
     }

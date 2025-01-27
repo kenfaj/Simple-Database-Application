@@ -2,12 +2,12 @@ package com.mycompany.simpledbapp.app;
 
 import javax.swing.*;
 
-import com.mycompany.simpledbapp.SimpleDBApp;
-
 import java.awt.*;
 //import gridlayout
 
 public class Login extends JPanel {
+
+    private JFrame frame;
 
     private JPanel panel;
     private JLabel userLabel;
@@ -16,7 +16,9 @@ public class Login extends JPanel {
     private JPasswordField passwordField;
     private JButton loginButton;
 
-    public Login() {
+    public Login(JFrame frame) {
+        this.frame = frame;
+
         panel = new JPanel();
         userLabel = new JLabel("Enter Username");
         passwordLabel = new JLabel("Enter Password");
@@ -26,7 +28,7 @@ public class Login extends JPanel {
     }
 
     public Login launch() {
-        SimpleDBApp.frame.setTitle("Login Page");
+        frame.setTitle("Login Page");
 
         panel.setLayout(new GridLayout(2, 2));
         panel.add(userLabel);
@@ -48,9 +50,17 @@ public class Login extends JPanel {
         // Tester method
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new Login().launch());
+        f.add(new Login(f).launch());
         f.pack();
         f.setVisible(true);
+    }
+
+    public String getUser() {
+        return userTextField.getText();
+    }
+
+    public char[] getPassword() {
+        return passwordField.getPassword();
     }
 
 }
