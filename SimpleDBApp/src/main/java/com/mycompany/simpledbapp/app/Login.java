@@ -1,5 +1,6 @@
 package com.mycompany.simpledbapp.app;
 
+import com.mycompany.simpledbapp.service.LoginButtonController;
 import javax.swing.*;
 
 import java.awt.*;
@@ -42,7 +43,10 @@ public class Login extends JPanel {
         setSize(300, 200);
 
         // Set up actionlistener for Login Button
-
+        loginButton.addActionListener(new LoginButtonController(frame, userTextField, passwordField));
+        
+        //user: ken, password: vince
+        //user: kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, password: vince
         return this;
     }
 
