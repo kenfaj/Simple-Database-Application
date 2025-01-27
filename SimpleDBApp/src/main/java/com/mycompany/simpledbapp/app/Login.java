@@ -2,7 +2,7 @@ package com.mycompany.simpledbapp.app;
 
 import javax.swing.*;
 
-import com.mycompany.simpledbapp.init;
+import com.mycompany.simpledbapp.SimpleDBApp;
 
 import java.awt.*;
 //import gridlayout
@@ -26,7 +26,7 @@ public class Login extends JPanel {
     }
 
     public Login launch() {
-        init.frame.setTitle("Login Page");
+        SimpleDBApp.frame.setTitle("Login Page");
 
         panel.setLayout(new GridLayout(2, 2));
         panel.add(userLabel);
