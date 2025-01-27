@@ -9,11 +9,15 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Admin extends JPanel {
+    private JFrame frame;
+
     private JTable table;
     private LogoutButton logoutButton;
     private Object[][] list;
 
-    public Admin() {
+    public Admin(JFrame frame) {
+        this.frame = frame;
+
         list = JDBCStartup.getUsernameRoleArray();
         String[] columnNames = { "Username", "Access Role" };
         table = new JTable(list, columnNames);
@@ -27,7 +31,7 @@ public class Admin extends JPanel {
         setSize(300, 200);
 
         // setup actionlistener for logoutbutton
-        logoutButton.addActionListener(new LogoutButtonController());
+        logoutButton.addActionListener(new LogoutButtonController(frame));
 
         add(table);
         add(logoutButton);
@@ -39,7 +43,7 @@ public class Admin extends JPanel {
         // Tester method
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new Admin().launch());
+        f.add(new Admin(f).launch());
         f.pack();
         f.setVisible(true);
     }
