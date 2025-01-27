@@ -14,6 +14,8 @@ import com.mycompany.simpledbapp.SimpleDBApp;
 import com.mycompany.simpledbapp.app.Guest;
 import com.mycompany.simpledbapp.model.JDBCStartup;
 import com.mycompany.simpledbapp.app.Admin;
+import com.mycompany.simpledbapp.app.Error;
+
 
 public class LoginButtonController implements ActionListener {
 
@@ -23,6 +25,7 @@ public class LoginButtonController implements ActionListener {
     
     private JDBCStartup jdbc;
     private ResultSet rs;
+    private int loginCtr = 0;
 
     public LoginButtonController(JFrame frame, JTextField userTextField, JPasswordField passwordField) {
         this.frame = frame;
@@ -44,7 +47,16 @@ public class LoginButtonController implements ActionListener {
         char[] password = passwordField.getPassword();
 
         if (!isUser(username, password)) {
+            
+            if(++loginCtr == 3) {
+                new Error().launch();
+                loginCtr = 0;
+                return;
+            }
+            
             JOptionPane.showMessageDialog(null, "Invalid Username or Password");
+            userTextField.setText("");
+            passwordField.setText("");
         } else {
             SimpleDBApp.username = username;
             if (isAdmin(username, password)) {
@@ -54,7 +66,7 @@ public class LoginButtonController implements ActionListener {
             }
         }
          
-
+        
         frame.repaint();
     }
 
