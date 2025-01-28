@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import com.mycompany.simpledbapp.SimpleDBApp;
 import com.mycompany.simpledbapp.app.Login;
 
+
 public class LogoutButtonController implements ActionListener {
     private JFrame frame;
 
