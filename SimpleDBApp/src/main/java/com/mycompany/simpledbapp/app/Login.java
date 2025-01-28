@@ -30,24 +30,26 @@ public class Login extends JPanel {
         loginButton = new JButton("Login");
     }
 
+    /**
+     * Launches the login interface.
+     *
+     * @return Login instance representing the initialized login panel
+     */
     public Login launch() {
         frame.setTitle("Login Page");
-
         panel.setLayout(new GridLayout(2, 2));
         panel.add(userLabel);
         panel.add(userTextField);
         panel.add(passwordLabel);
         panel.add(passwordField);
-
         add(panel, BorderLayout.CENTER);
         add(loginButton, BorderLayout.SOUTH);
         setVisible(true);
         setSize(300, 200);
 
-        // Set up actionlistener for Login Button
+        // Set up action listener for Login Button
         LoginButtonController loginButtonController = new LoginButtonController(frame, userTextField, passwordField);
         loginButton.addActionListener(loginButtonController);
-
 
         return this;
     }
@@ -61,11 +63,22 @@ public class Login extends JPanel {
         f.setVisible(true);
     }
 
+    /**
+     * Returns the value in the username text field.
+     *
+     * @return the value in the username text field
+     */
     public String getUser() {
         return userTextField.getText();
     }
 
+    /**
+     * Returns the password entered in the password field.
+     *
+     * @return a character array containing the password
+     */
     public char[] getPassword() {
+        // Retrieve the password as a character array from the password field
         return passwordField.getPassword();
     }
 

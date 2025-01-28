@@ -1,2 +1,9 @@
-com\mycompany\simpledbapp\model\JDBCStartup$User.class
+com\mycompany\simpledbapp\app\Error.class
+com\mycompany\simpledbapp\app\Guest.class
+com\mycompany\simpledbapp\app\Admin.class
+com\mycompany\simpledbapp\app\components\LogoutButton.class
 com\mycompany\simpledbapp\model\JDBCStartup.class
+com\mycompany\simpledbapp\SimpleDBApp.class
+com\mycompany\simpledbapp\app\Login.class
+com\mycompany\simpledbapp\service\LoginButtonController.class
+com\mycompany\simpledbapp\service\LogoutButtonController.class

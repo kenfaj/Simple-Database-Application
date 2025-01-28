@@ -11,7 +11,6 @@ public class SimpleDBApp {
     public static void main(String[] args) {
         // Dito tayo magiinitialize ng Application(open login frame)
         JFrame frame = new JFrame();
-        String username = null;
         frame.add(new Login(frame).launch());
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
