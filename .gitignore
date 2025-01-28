@@ -2,3 +2,5 @@
 
 target/
 bin/
+.vscode/settings.json
+.gitignore
