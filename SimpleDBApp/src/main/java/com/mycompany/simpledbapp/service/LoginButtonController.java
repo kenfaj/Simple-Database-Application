@@ -21,7 +21,7 @@ public class LoginButtonController implements ActionListener {
     private JTextField userTextField;
     private JPasswordField passwordField;
 
-    private LoginButtonController(JFrame frame, JTextField userTextField, JPasswordField passwordField) {
+    public LoginButtonController(JFrame frame, JTextField userTextField, JPasswordField passwordField) {
         this.frame = frame;
         this.userTextField = userTextField;
         this.passwordField = passwordField;
