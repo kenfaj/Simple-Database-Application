@@ -1,8 +1,11 @@
 package com.mycompany.simpledbapp.app;
 
+import com.mycompany.simpledbapp.service.LoginButtonController;
 import javax.swing.*;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 //import gridlayout
 
 public class Login extends JPanel {
@@ -42,6 +45,8 @@ public class Login extends JPanel {
         setSize(300, 200);
 
         // Set up actionlistener for Login Button
+        LoginButtonController loginButtonController = new LoginButtonController(frame, userTextField, passwordField);
+        loginButton.addActionListener(loginButtonController);
 
         return this;
     }
