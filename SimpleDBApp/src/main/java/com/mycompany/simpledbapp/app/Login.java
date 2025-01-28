@@ -4,8 +4,6 @@ import com.mycompany.simpledbapp.service.LoginButtonController;
 import javax.swing.*;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 //import gridlayout
 
 public class Login extends JPanel {
