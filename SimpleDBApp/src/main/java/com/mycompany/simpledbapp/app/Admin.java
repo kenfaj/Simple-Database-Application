@@ -13,7 +13,7 @@ public class Admin extends JPanel {
     private Object[][] list;
 
     public Admin(JFrame frame) {
-        list = JDBCStartup.getUsernameRoleArray(JDBCStartup.DEFAULT_DATABASE);
+        list = new JDBCStartup(JDBCStartup.DEFAULT_DATABASE).getUsernameRoleArray(JDBCStartup.DEFAULT_DATABASE);
         String[] columnNames = { "Username", "Access Role" };
         table = new JTable(list, columnNames);
         logoutButton = new LogoutButton(frame);
