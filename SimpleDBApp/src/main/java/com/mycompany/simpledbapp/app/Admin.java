@@ -18,7 +18,7 @@ public class Admin extends JPanel {
     public Admin(JFrame frame) {
         this.frame = frame;
 
-        list = JDBCStartup.getUsernameRoleArray();
+        list = JDBCStartup.getUsernameRoleArray(JDBCStartup.DEFAULT_DATABASE);
         String[] columnNames = { "Username", "Access Role" };
         table = new JTable(list, columnNames);
         logoutButton = new LogoutButton();

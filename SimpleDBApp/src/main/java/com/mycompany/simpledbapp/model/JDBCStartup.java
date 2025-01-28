@@ -55,6 +55,7 @@ public class JDBCStartup {
     }
 
     private Connection conn;
+    public static final String DEFAULT_DATABASE = "Accounts.db";
 
     public JDBCStartup(String database) {
     String connStr = "jdbc:sqlite:" + Paths.get("SimpleDBApp/src/main/resources").toAbsolutePath().toString().replace("\\", "/").replaceFirst("/SimpleDBApp", "") + "/AccountsDB.db";
@@ -112,8 +113,8 @@ public class JDBCStartup {
         }
     }
 
-    public static Object[][] getUsernameRoleArray() {
-        JDBCStartup jdbc = new JDBCStartup("AccountsDB.db");
+    public static Object[][] getUsernameRoleArray(String database) {
+        JDBCStartup jdbc = new JDBCStartup(database);
         ArrayList<String[]> usernameRoleArray = new ArrayList<>();
         try {
             ResultSet rs = jdbc.getAll();
