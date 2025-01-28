@@ -1,6 +1,9 @@
 package com.mycompany.simpledbapp.app;
 
 import java.awt.FlowLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -36,6 +39,13 @@ public class Error extends JDialog {
         // Add an action listener to the exit button to close the application when
         // clicked
         exitButton.addActionListener(e -> System.exit(0));
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
         // Show the error dialog
         setVisible(true);
