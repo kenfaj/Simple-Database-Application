@@ -69,9 +69,9 @@ public class LoginButtonController implements ActionListener {
             loginCtr = 0;
         }
         // Update the frame
-        frame.pack();
         frame.revalidate();
         frame.repaint();
+        frame.pack();
     }
 
     /**
