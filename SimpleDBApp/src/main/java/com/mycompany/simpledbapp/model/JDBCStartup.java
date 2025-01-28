@@ -18,90 +18,34 @@ import javax.swing.JOptionPane;
  * @author ken
  */
 public class JDBCStartup {
-    private class User {
-        String username;
-        String password;
-        String accessRole;
-
-        public User(String username, String password, String accessRole) {
-            this.username = username;
-            this.password = password;
-            this.accessRole = accessRole;
-        }
-
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public String getAccessRole() {
-            return accessRole;
-        }
-
-        public void setAccessRole(String accessRole) {
-            this.accessRole = accessRole;
-        }
-    }
-
     private Connection conn;
-    public static final String DEFAULT_DATABASE = "Accounts.db";
+    public static final String DEFAULT_DATABASE = "AccountsDB.db";
 
     public JDBCStartup(String database) {
-    String connStr = "jdbc:sqlite:" + Paths.get("SimpleDBApp/src/main/resources").toAbsolutePath().toString().replace("\\", "/").replaceFirst("/SimpleDBApp", "") + "/AccountsDB.db";
-
+        String connStr = "jdbc:sqlite:" + Paths.get("SimpleDBApp/src/main/resources").toAbsolutePath().toString()
+                .replace("\\", "/").replaceFirst("/SimpleDBApp", "") + "/" + database;
         try {
             conn = DriverManager.getConnection(connStr);
             System.out.println("Successful connection");
         } catch (SQLException e) {
-            System.err.println("Failed to create connection");
+            JOptionPane.showMessageDialog(null, "Failed to create connection\n" + e.getMessage());
             System.err.println(e.toString());
-
         }
     }
 
+    /**
+     * Retrieves all records in the Users table.
+     * 
+     * @return a ResultSet containing all records in the Users table
+     * @throws SQLException if a database access error occurs
+     */
     public ResultSet getAll() throws SQLException {
         Statement stmt = conn.createStatement();
         return stmt.executeQuery("select * from Users");
     }
 
-    public User getUser(String username, String password, String accessRole) throws SQLException {
-        Statement stmt = conn.createStatement();
-        String sqlStr = "select * from users a "
-                + "where a.username=" + username + " "
-                + "& a.password=" + password
-                + "& a.user_role=" + accessRole;
-        ResultSet rs = stmt.executeQuery(sqlStr);
-        if (rs.next())
-            return new User(rs.getString("username"), rs.getString("password"),
-                    rs.getString("access_role"));
-        else
-            return null;
-    }
-
-    public User getUserByUserName(String username) throws SQLException {
-        Statement stmt = conn.createStatement();
-        String sqlStr = "select * from users a "
-                + "where a.username=" + username;
-        ResultSet rs = stmt.executeQuery(sqlStr);
-        if (rs.next())
-            return new User(rs.getString("username"), rs.getString("password"),
-                    rs.getString("access_role"));
-        else
-            return null;
-    }
-
     public static void main(String[] args) {
+        // Tester method
         JDBCStartup jdbc = new JDBCStartup("AccountsDB.db");
         try {
             ResultSet rs = jdbc.getAll();
@@ -113,7 +57,15 @@ public class JDBCStartup {
         }
     }
 
-    public static Object[][] getUsernameRoleArray(String database) {
+    /**
+     * Retrieves all records in the Users table as an array of String arrays.
+     * The first element of each String array is the username, and the second
+     * element is the user role.
+     * 
+     * @param database the name of the database file
+     * @return an array of String arrays containing all records in the Users table
+     */
+    public static String[][] getUsernameRoleArray(String database) {
         JDBCStartup jdbc = new JDBCStartup(database);
         ArrayList<String[]> usernameRoleArray = new ArrayList<>();
         try {
@@ -127,7 +79,7 @@ public class JDBCStartup {
             JOptionPane.showMessageDialog(null, "SQLException in JDBCStartup UsernameRoleArray");
         }
 
-        // cast ArrayList<String[]> to object[][]
+        // cast ArrayList<String[]> to String[][]
         return usernameRoleArray.toArray(new String[0][]);
     }
 }

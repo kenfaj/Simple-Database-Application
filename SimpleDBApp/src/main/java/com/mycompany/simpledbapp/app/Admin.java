@@ -2,40 +2,37 @@ package com.mycompany.simpledbapp.app;
 
 import com.mycompany.simpledbapp.app.components.LogoutButton;
 import com.mycompany.simpledbapp.model.JDBCStartup;
-import com.mycompany.simpledbapp.service.LogoutButtonController;
 
 import java.awt.*;
 
 import javax.swing.*;
 
 public class Admin extends JPanel {
-    private JFrame frame;
-
     private JTable table;
     private LogoutButton logoutButton;
     private Object[][] list;
 
     public Admin(JFrame frame) {
-        this.frame = frame;
-
         list = JDBCStartup.getUsernameRoleArray(JDBCStartup.DEFAULT_DATABASE);
         String[] columnNames = { "Username", "Access Role" };
         table = new JTable(list, columnNames);
-        logoutButton = new LogoutButton();
-
+        logoutButton = new LogoutButton(frame);
     }
 
+    /**
+     * Launches the Admin interface.
+     * Initializes the Admin panel with a JTable containing all usernames and their
+     * roles
+     * and a LogoutButton to exit the interface.
+     *
+     * @return Admin instance representing the initialized Admin panel
+     */
     public Admin launch() {
         setLayout(new GridLayout(2, 1));
         setVisible(true);
         setSize(300, 200);
-
-        // setup actionlistener for logoutbutton
-        logoutButton.addActionListener(new LogoutButtonController(frame));
-
-        add(table);
-        add(logoutButton);
-
+        add(table); // add the JTable containing all usernames and their roles
+        add(logoutButton); // add the LogoutButton to exit the interface
         return this;
     }
 
