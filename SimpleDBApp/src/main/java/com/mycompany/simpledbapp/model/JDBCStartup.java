@@ -22,8 +22,7 @@ public class JDBCStartup {
     public static final String DEFAULT_DATABASE = "AccountsDB.db";
 
     public JDBCStartup(String database) {
-        String connStr = "jdbc:sqlite:" + Paths.get("SimpleDBApp/src/main/resources").toAbsolutePath().toString()
-                .replace("\\", "/").replaceFirst("/SimpleDBApp", "") + "/" + database;
+        String connStr = "jdbc:sqlite:SimpleDBApp/src/main/resources/" + database;
         try {
             conn = DriverManager.getConnection(connStr);
             System.out.println("Successful connection");
