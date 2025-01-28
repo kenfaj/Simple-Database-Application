@@ -64,9 +64,16 @@ public class LoginButtonController implements ActionListener {
             } else {
                 frame.setContentPane(new Guest(frame).launch());
             }
+            loginCtr = 0;
         }
          
-        
+        System.out.println(username);
+        System.out.println(password);
+        try {
+            System.out.println(rs.getString("user_role"));
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
         frame.repaint();
     }
 
@@ -89,7 +96,7 @@ public class LoginButtonController implements ActionListener {
             while (rs.next()) {
                 if (rs.getString("username").equals(username) &&
                         rs.getString("password").equals(new String(password)) &&
-                        rs.getString("access_role").equals("admin")) {
+                        rs.getString("user_role").equals("admin")) {
                     return true;
                 }
             }
