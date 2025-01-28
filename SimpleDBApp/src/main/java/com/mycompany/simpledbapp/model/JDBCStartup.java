@@ -27,6 +27,15 @@ public class JDBCStartup {
             conn = DriverManager.getConnection(connStr);
             System.out.println("Successful connection");
         } catch (SQLException e) {
+            try {
+                String connStr2 = "jdbc:sqlite:" + Paths.get("SimpleDBApp/src/main/resources").toAbsolutePath()
+                        .toString().replace("\\", "/").replaceFirst("/SimpleDBApp", "") + "/" + database;
+                conn = DriverManager.getConnection(connStr2);
+                System.out.println("Successful connection");
+                return;
+            } catch (SQLException ex) {
+            }
+
             JOptionPane.showMessageDialog(null, "Failed to create connection\n" + e.getMessage());
             System.err.println(e.toString());
         }
