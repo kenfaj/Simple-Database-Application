@@ -45,9 +45,16 @@ public class Login extends JPanel {
         setSize(300, 200);
 
         // Set up actionlistener for Login Button
+<<<<<<< HEAD
         LoginButtonController loginButtonController = new LoginButtonController(frame, userTextField, passwordField);
         loginButton.addActionListener(loginButtonController);
 
+=======
+        loginButton.addActionListener(new LoginButtonController(frame, userTextField, passwordField));
+        
+        //user: ken, password: vince
+        //user: kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, password: vince
+>>>>>>> 1d19d54824850fb169da9650093710da1a672706
         return this;
     }
 

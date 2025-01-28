@@ -4,6 +4,7 @@
  */
 package com.mycompany.simpledbapp.model;
 
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -56,13 +57,15 @@ public class JDBCStartup {
     private Connection conn;
 
     public JDBCStartup(String database) {
-        String connStr = "jdbc:sqlite:SimpleDBApp/src/main/resources/" + database;
+    String connStr = "jdbc:sqlite:" + Paths.get("SimpleDBApp/src/main/resources").toAbsolutePath().toString().replace("\\", "/").replaceFirst("/SimpleDBApp", "") + "/AccountsDB.db";
+
         try {
             conn = DriverManager.getConnection(connStr);
             System.out.println("Successful connection");
         } catch (SQLException e) {
             System.err.println("Failed to create connection");
             System.err.println(e.toString());
+
         }
     }
 
