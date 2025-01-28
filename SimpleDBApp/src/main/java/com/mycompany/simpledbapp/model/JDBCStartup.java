@@ -73,7 +73,7 @@ public class JDBCStartup {
      * @param database the name of the database file
      * @return an array of String arrays containing all records in the Users table
      */
-    public static String[][] getUsernameRoleArray(String database) {
+    public String[][] getUsernameRoleArray(String database) {
         JDBCStartup jdbc = new JDBCStartup(database);
         ArrayList<String[]> usernameRoleArray = new ArrayList<>();
         try {

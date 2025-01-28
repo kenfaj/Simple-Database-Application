@@ -3,7 +3,6 @@ package com.mycompany.simpledbapp.app;
 import javax.swing.*;
 
 import com.mycompany.simpledbapp.app.components.LogoutButton;
-import com.mycompany.simpledbapp.service.LogoutButtonController;
 
 import java.awt.*;
 
