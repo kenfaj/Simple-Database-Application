@@ -21,7 +21,7 @@ public class Error extends JDialog {
         add(errorLabel);
         add(exitButton);
         setSize(400, 100);
-        exitButton.addActionListener(e -> this.dispose());
+        exitButton.addActionListener(e -> System.exit(0));
         
         setVisible(true);
         return this;

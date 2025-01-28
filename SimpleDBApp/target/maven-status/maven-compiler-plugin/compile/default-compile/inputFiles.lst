@@ -1,21 +1,9 @@
-<<<<<<< HEAD
-C:\Users\Vince\Downloads\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Admin.java
-C:\Users\Vince\Downloads\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\service\LogoutButtonController.java
-C:\Users\Vince\Downloads\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\components\LogoutButton.java
-C:\Users\Vince\Downloads\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Login.java
-C:\Users\Vince\Downloads\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\model\JDBCStartup.java
-C:\Users\Vince\Downloads\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Error.java
-C:\Users\Vince\Downloads\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\SimpleDBApp.java
-C:\Users\Vince\Downloads\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\service\LoginButtonController.java
-C:\Users\Vince\Downloads\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Guest.java
-=======
-C:\Users\Vince\Desktop\JavaPrograms\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\service\LoginButtonController.java
-C:\Users\Vince\Desktop\JavaPrograms\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Admin.java
-C:\Users\Vince\Desktop\JavaPrograms\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\model\JDBCStartup.java
-C:\Users\Vince\Desktop\JavaPrograms\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\components\LogoutButton.java
-C:\Users\Vince\Desktop\JavaPrograms\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Guest.java
-C:\Users\Vince\Desktop\JavaPrograms\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Login.java
-C:\Users\Vince\Desktop\JavaPrograms\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Error.java
-C:\Users\Vince\Desktop\JavaPrograms\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\service\LogoutButtonController.java
-C:\Users\Vince\Desktop\JavaPrograms\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\SimpleDBApp.java
->>>>>>> 1d19d54824850fb169da9650093710da1a672706
+C:\Users\ken\Documents\GitHub\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\components\LogoutButton.java
+C:\Users\ken\Documents\GitHub\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\service\LoginButtonController.java
+C:\Users\ken\Documents\GitHub\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\service\LogoutButtonController.java
+C:\Users\ken\Documents\GitHub\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\model\JDBCStartup.java
+C:\Users\ken\Documents\GitHub\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Admin.java
+C:\Users\ken\Documents\GitHub\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Guest.java
+C:\Users\ken\Documents\GitHub\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\SimpleDBApp.java
+C:\Users\ken\Documents\GitHub\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Error.java
+C:\Users\ken\Documents\GitHub\Simple-Database-Application\SimpleDBApp\src\main\java\com\mycompany\simpledbapp\app\Login.java

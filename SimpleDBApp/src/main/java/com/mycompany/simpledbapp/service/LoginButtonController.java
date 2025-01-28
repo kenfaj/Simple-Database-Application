@@ -24,7 +24,6 @@ public class LoginButtonController implements ActionListener {
     private JPasswordField passwordField;
     
     private JDBCStartup jdbc;
-    private ResultSet rs;
     private int loginCtr = 0;
 
     public LoginButtonController(JFrame frame, JTextField userTextField, JPasswordField passwordField) {
@@ -32,23 +31,18 @@ public class LoginButtonController implements ActionListener {
         this.userTextField = userTextField;
         this.passwordField = passwordField;
 
-        jdbc = new JDBCStartup("AccountsDB.db");
-        try {
-            rs = jdbc.getAll();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        jdbc = new JDBCStartup(JDBCStartup.DEFAULT_DATABASE);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
         String username = userTextField.getText();
-        char[] password = passwordField.getPassword();
+        String password = new String(passwordField.getPassword());
 
         if (!isUser(username, password)) {
             
-            if(++loginCtr == 3) {
+            if (++loginCtr == 3) {
                 new Error().launch();
                 loginCtr = 0;
                 return;
@@ -66,37 +60,56 @@ public class LoginButtonController implements ActionListener {
             }
             loginCtr = 0;
         }
-         
-        System.out.println(username);
-        System.out.println(password);
-        try {
-            System.out.println(rs.getString("user_role"));
-        } catch (SQLException ex) {
-            System.out.println(ex.toString());
-        }
+        frame.pack();
+        frame.revalidate();
         frame.repaint();
     }
 
-    public boolean isUser(String username, char[] password) {
+    public boolean isUser(String username, String password) {
+        ResultSet rs = null;
+        try {
+            rs = jdbc.getAll();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        //tester
+        System.out.println("isUser Method Running.. with rs:" + rs);
         try {
             while (rs.next()) {
-                if (rs.getString("username").equals(username) &&
-                        rs.getString("password").equals(new String(password))) {
+                //Tester
+                System.out.println("Username:" + rs.getString("username") + " compares to " + username);
+                System.out.println("Password:" + rs.getString("password") + " compares to " + password);
+
+                if (rs.getString("username").equals(username)
+                        && rs.getString("password").equals(password)) {
                     return true;
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            //tester
+            System.out.println("Caught error: " + e.getMessage());
         }
         return false;
     }
 
-    public boolean isAdmin(String username, char[] password) {
+    public boolean isAdmin(String username, String password) {
+        
+        ResultSet rs = null;
+        try {
+            rs = jdbc.getAll();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        //tester
+        System.out.println("isAdmin method Runinng..");
         try {
             while (rs.next()) {
-                if (rs.getString("username").equals(username) &&
-                        rs.getString("password").equals(new String(password)) &&
-                        rs.getString("user_role").equals("admin")) {
+                if (rs.getString("username").equals(username)
+                        && rs.getString("password").equals(password)
+                        && rs.getString("user_role").equals("admin")) {
+                    //tester
+                    System.out.println("he is admin:" + username);
                     return true;
                 }
             }
