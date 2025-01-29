@@ -61,8 +61,9 @@ public class Login extends JPanel {
         add(panel, BorderLayout.CENTER);
         add(loginButton, BorderLayout.SOUTH);
         
+        
         panel.add(userLabel);
-        panel.add(userTextField);
+        panel.add(userTextField);   
         panel.add(passwordLabel);
         panel.add(passwordField);
         setVisible(true);
