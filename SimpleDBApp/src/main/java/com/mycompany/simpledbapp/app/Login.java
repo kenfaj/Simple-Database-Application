@@ -54,10 +54,9 @@ public class Login extends JPanel {
         loginButton.setForeground(lightGray);
         loginButton.setFocusPainted(false);
         loginButton.setBorder(BorderFactory.createLineBorder(lightGray));
-        
+        loginButton.setPreferredSize(new Dimension(0, 30));
         panel.setLayout(new GridLayout(2, 1, 0, 10));
         
-
         setLayout(new BorderLayout());
         add(panel, BorderLayout.CENTER);
         add(loginButton, BorderLayout.SOUTH);
@@ -67,7 +66,7 @@ public class Login extends JPanel {
         panel.add(passwordLabel);
         panel.add(passwordField);
         setVisible(true);
-        setSize(500, 300);
+        setPreferredSize(new Dimension(300, 100));
         
         
 
