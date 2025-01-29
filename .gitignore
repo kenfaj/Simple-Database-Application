@@ -4,3 +4,7 @@ target/
 bin/
 .vscode/settings.json
 .gitignore
+SimpleDBApp/target/SimpleDBApp-1.0-SNAPSHOT.jar
+SimpleDBApp/META-INF/MANIFEST.MF
+SimpleDBApp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+SimpleDBApp/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
