@@ -82,10 +82,16 @@ public class Login extends JPanel {
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.add(new Login(f).launch());
-        f.pack();
-        f.setResizable(false);
+        f.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.CENTER;
+        f.setSize(400, 200);
         f.setLocationRelativeTo(null);
         f.setVisible(true);
+        f.getContentPane().setBackground(new Color(40, 40, 40));
+
     }
 
     /**
