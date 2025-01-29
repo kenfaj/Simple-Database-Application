@@ -1,16 +1,18 @@
 package com.mycompany.simpledbapp.app;
 
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+
 import com.mycompany.simpledbapp.app.components.LogoutButton;
 import com.mycompany.simpledbapp.model.JDBCStartup;
 
-import java.awt.*;
-
-import javax.swing.*;
-
 public class Admin extends JPanel {
-    private JTable table;
-    private LogoutButton logoutButton;
-    private Object[][] list;
+    private final JTable table;
+    private final LogoutButton logoutButton;
+    private final Object[][] list;
 
     public Admin(JFrame frame) {
         list = new JDBCStartup(JDBCStartup.DEFAULT_DATABASE).getUsernameRoleArray(JDBCStartup.DEFAULT_DATABASE);

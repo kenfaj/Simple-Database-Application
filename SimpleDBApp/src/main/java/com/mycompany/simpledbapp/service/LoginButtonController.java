@@ -11,18 +11,18 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import com.mycompany.simpledbapp.SimpleDBApp;
-import com.mycompany.simpledbapp.app.Guest;
-import com.mycompany.simpledbapp.model.JDBCStartup;
 import com.mycompany.simpledbapp.app.Admin;
 import com.mycompany.simpledbapp.app.Error;
+import com.mycompany.simpledbapp.app.Guest;
+import com.mycompany.simpledbapp.model.JDBCStartup;
 
 public class LoginButtonController implements ActionListener {
 
-    private JFrame frame;
-    private JTextField userTextField;
-    private JPasswordField passwordField;
+    private final JFrame frame;
+    private final JTextField userTextField;
+    private final JPasswordField passwordField;
 
-    private JDBCStartup jdbc;
+    private final JDBCStartup jdbc;
     private int loginCtr = 0;
 
     public LoginButtonController(JFrame frame, JTextField userTextField, JPasswordField passwordField) {

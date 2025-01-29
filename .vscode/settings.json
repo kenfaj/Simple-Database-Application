@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "Default Database",
+            "database": "SimpleDBApp\\src\\main\\resources\\AccountsDB.db"
+        }
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
+}
