@@ -1,5 +1,6 @@
 package com.mycompany.simpledbapp.app;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -23,11 +24,24 @@ public class Error extends JDialog {
      * @return Error instance representing the initialized error dialog
      */
     public Error launch() {
+        
+        Color darkGray = new Color(40, 40, 40);
+        Color lightGray = new Color(220, 220, 220);
+        Color buttonColor = new Color(60, 60, 60);
+        
         // Set the layout to FlowLayout
         setLayout(new FlowLayout());
 
         // Set the title of the error dialog
         setTitle("Application closed");
+        
+        //set UI
+        this.getContentPane().setBackground(darkGray);
+        exitButton.setBackground(buttonColor);
+        exitButton.setForeground(lightGray);
+        exitButton.setFocusPainted(false);
+        exitButton.setContentAreaFilled(false);
+        errorLabel.setForeground(lightGray);
 
         // Add the label and button to the error dialog
         add(errorLabel);

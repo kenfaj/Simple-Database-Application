@@ -28,6 +28,12 @@ public class Admin extends JPanel {
      * @return Admin instance representing the initialized Admin panel
      */
     public Admin launch() {
+        Color darkGray = new Color(40, 40, 40);
+        Color lightGray = new Color(220, 220, 220);
+        
+        table.setBackground(darkGray);
+        table.setForeground(lightGray);
+        setBackground(darkGray);
         setLayout(new GridLayout(2, 1));
         setVisible(true);
         setSize(300, 200);
