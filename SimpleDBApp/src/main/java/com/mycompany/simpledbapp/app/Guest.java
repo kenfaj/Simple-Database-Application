@@ -16,10 +16,17 @@ public class Guest extends JPanel {
     }
 
     public Guest launch() {
+        
+        Color darkGray = new Color(40, 40, 40);
+        Color lightGray = new Color(220, 220, 220);
+        
         setLayout(new GridLayout(2, 1));
         setVisible(true);
         setSize(300, 200);
+        setBackground(darkGray);
         welcomeLabel.setHorizontalAlignment(JLabel.CENTER);
+        welcomeLabel.setForeground(lightGray);
+        
         add(welcomeLabel);
         add(logoutButton);
         return this;
