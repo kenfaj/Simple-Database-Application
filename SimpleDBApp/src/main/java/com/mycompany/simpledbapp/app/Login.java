@@ -23,8 +23,8 @@ public class Login extends JPanel {
         panel = new JPanel();
         userLabel = new JLabel("Enter Username");
         passwordLabel = new JLabel("Enter Password");
-        userTextField = new JTextField();
-        passwordField = new JPasswordField();
+        userTextField = new JTextField(15);
+        passwordField = new JPasswordField(15);
         loginButton = new JButton("Login");
     }
 
@@ -35,15 +35,41 @@ public class Login extends JPanel {
      */
     public Login launch() {
         frame.setTitle("Login Page");
-        panel.setLayout(new GridLayout(2, 2));
+        
+        Color darkGray = new Color(40, 40, 40);
+        Color lightGray = new Color(220, 220, 220);
+        Color buttonColor = new Color(60, 60, 60);
+        
+        setBackground(darkGray);
+        panel.setBackground(darkGray);
+        userLabel.setForeground(lightGray);
+        passwordLabel.setForeground(lightGray);
+        userTextField.setBackground(buttonColor);
+        userTextField.setForeground(lightGray);
+        userTextField.setCaretColor(lightGray);
+        passwordField.setBackground(buttonColor);
+        passwordField.setForeground(lightGray);
+        passwordField.setCaretColor(lightGray);
+        loginButton.setBackground(buttonColor);
+        loginButton.setForeground(lightGray);
+        loginButton.setFocusPainted(false);
+        loginButton.setBorder(BorderFactory.createLineBorder(lightGray));
+        
+        panel.setLayout(new GridLayout(2, 1, 0, 10));
+        
+
+        setLayout(new BorderLayout());
+        add(panel, BorderLayout.CENTER);
+        add(loginButton, BorderLayout.SOUTH);
+        
         panel.add(userLabel);
         panel.add(userTextField);
         panel.add(passwordLabel);
         panel.add(passwordField);
-        add(panel, BorderLayout.CENTER);
-        add(loginButton, BorderLayout.SOUTH);
         setVisible(true);
-        setSize(300, 200);
+        setSize(500, 300);
+        
+        
 
         // Set up action listener for Login Button
         LoginButtonController loginButtonController = new LoginButtonController(frame, userTextField, passwordField);
@@ -58,6 +84,8 @@ public class Login extends JPanel {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.add(new Login(f).launch());
         f.pack();
+        f.setResizable(false);
+        f.setLocationRelativeTo(null);
         f.setVisible(true);
     }
 
