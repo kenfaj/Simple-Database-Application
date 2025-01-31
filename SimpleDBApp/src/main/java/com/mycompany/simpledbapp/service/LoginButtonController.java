@@ -15,6 +15,8 @@ import com.mycompany.simpledbapp.app.Guest;
 import com.mycompany.simpledbapp.model.JDBCStartup;
 import com.mycompany.simpledbapp.app.Admin;
 import com.mycompany.simpledbapp.app.Error;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
 public class LoginButtonController implements ActionListener {
 
@@ -62,16 +64,22 @@ public class LoginButtonController implements ActionListener {
             // and launch the appropriate interface
             SimpleDBApp.username = username;
             if (isAdmin(username, password)) {
+                frame.setSize(600, 500);
                 frame.setContentPane(new Admin(frame).launch());
             } else {
+                frame.setSize(400, 200);
                 frame.setContentPane(new Guest(frame).launch());
+                frame.setLayout(new GridBagLayout());
+                GridBagConstraints gbc = new GridBagConstraints();
+                gbc.gridx = 0;
+                gbc.gridy = 0;
+                gbc.anchor = GridBagConstraints.CENTER;
             }
             loginCtr = 0;
         }
         // Update the frame
         frame.revalidate();
         frame.repaint();
-        frame.pack();
     }
 
     /**
