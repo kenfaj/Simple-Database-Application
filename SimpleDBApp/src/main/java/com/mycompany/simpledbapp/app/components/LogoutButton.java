@@ -18,7 +18,6 @@ public class LogoutButton extends JButton {
         setFocusPainted(false);
         setContentAreaFilled(false);
         setText("Logout");
-        setPreferredSize(new java.awt.Dimension(100, 30));
         addActionListener(new LogoutButtonController(frame));
     }
 }
