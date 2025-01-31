@@ -9,6 +9,7 @@ import com.mycompany.simpledbapp.SimpleDBApp;
 import com.mycompany.simpledbapp.app.Login;
 
 public class LogoutButtonController implements ActionListener {
+
     private JFrame frame;
 
     public LogoutButtonController(JFrame frame) {
@@ -16,8 +17,8 @@ public class LogoutButtonController implements ActionListener {
     }
 
     /**
-     * Handles the action event triggered by the logout button.
-     * Resets the username to null and switches the interface to the login screen.
+     * Handles the action event triggered by the logout button. Resets the
+     * username to null and switches the interface to the login screen.
      *
      * @param e the ActionEvent triggered by the logout button
      */
@@ -27,6 +28,5 @@ public class LogoutButtonController implements ActionListener {
         frame.setContentPane(new Login(frame).launch()); // switch to login
         frame.revalidate();
         frame.repaint();
-        frame.pack();
     }
 }
