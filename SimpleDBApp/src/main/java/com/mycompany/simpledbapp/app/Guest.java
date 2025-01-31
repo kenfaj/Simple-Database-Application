@@ -41,9 +41,8 @@ public class Guest extends JPanel {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.CENTER;
-        f.getContentPane().setBackground(new Color(40, 40, 40));
         f.setSize(400, 200);
+        f.getContentPane().setBackground(new Color(40, 40, 40));
         f.setVisible(true);
     }
 
