@@ -4,7 +4,6 @@ import com.mycompany.simpledbapp.service.LoginButtonController;
 import javax.swing.*;
 
 import java.awt.*;
-//import gridlayout
 
 public class Login extends JPanel {
 
@@ -35,6 +34,13 @@ public class Login extends JPanel {
      */
     public Login launch() {
         frame.setTitle("Login Page");
+        frame.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.CENTER;
+        frame.setSize(400, 200);
+        frame.setLocationRelativeTo(null);
         
         Color darkGray = new Color(40, 40, 40);
         Color lightGray = new Color(220, 220, 220);
@@ -83,13 +89,6 @@ public class Login extends JPanel {
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.add(new Login(f).launch());
-        f.setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.CENTER;
-        f.setSize(400, 200);
-        f.setLocationRelativeTo(null);
         f.setVisible(true);
         f.getContentPane().setBackground(new Color(40, 40, 40));
 
