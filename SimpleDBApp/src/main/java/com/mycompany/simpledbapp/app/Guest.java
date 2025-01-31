@@ -9,10 +9,12 @@ import java.awt.*;
 public class Guest extends JPanel {
     private JLabel welcomeLabel;
     private LogoutButton logoutButton;
+    private JPanel container;
 
     public Guest(JFrame frame) {
         welcomeLabel = new JLabel("Welcome Guest");
         logoutButton = new LogoutButton(frame);
+        container = new JPanel();
     }
 
     public Guest launch() {
@@ -20,15 +22,19 @@ public class Guest extends JPanel {
         Color darkGray = new Color(40, 40, 40);
         Color lightGray = new Color(220, 220, 220);
         
-        setLayout(new GridLayout(2, 1));
+        container.setLayout(new GridLayout(2, 1));
         setVisible(true);
         setSize(300, 200);
         setBackground(darkGray);
         welcomeLabel.setHorizontalAlignment(JLabel.CENTER);
         welcomeLabel.setForeground(lightGray);
         
-        add(welcomeLabel);
-        add(logoutButton);
+        container.setBackground(darkGray);
+        
+        container.add(welcomeLabel);
+        container.add(logoutButton);
+        add(container);
+        
         return this;
     }
 
