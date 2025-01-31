@@ -27,5 +27,6 @@ public class LogoutButtonController implements ActionListener {
         frame.setContentPane(new Login(frame).launch()); // switch to login
         frame.revalidate();
         frame.repaint();
+        frame.pack();
     }
 }
